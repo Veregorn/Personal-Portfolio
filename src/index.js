@@ -107,7 +107,7 @@ MeImage.alt = "Me";
 home.appendChild(MeImage);
 
 // About
-/* const aboutHeader = createElement("div", "section-header", "about-header");
+const aboutHeader = createElement("div", "section-header", "about-header");
 const aboutBody = createElement("div", "section-body", "about-body");
 about.appendChild(aboutHeader);
 about.appendChild(aboutBody);
@@ -115,9 +115,19 @@ about.appendChild(aboutBody);
 const aboutHeaderText = createElement("h2", "section-header-text", "about-header-text");
 aboutHeaderText.textContent = "02. ";
 const aboutHeaderTitle = createElement("span", "section-header-title", "about-header-title");
-aboutHeaderTitle.textContent = "About";
+aboutHeaderTitle.textContent = "About Me";
 aboutHeaderText.appendChild(aboutHeaderTitle);
-aboutHeader.appendChild(aboutHeaderText); */
+aboutHeader.appendChild(aboutHeaderText);
+const aboutHeaderLine = createElement("div", "section-header-line", "about-header-line");
+aboutHeader.appendChild(aboutHeaderLine);
+
+const aboutBodyImage = createElement("img", "section-body-image", "about-body-image");
+aboutBodyImage.src = Me;
+aboutBodyImage.alt = "Me";
+aboutBody.appendChild(aboutBodyImage);
+const aboutBodyText = createElement("p", "section-body-text", "about-body-text");
+aboutBodyText.textContent = "I am a Full Stack Developer with a passion for learning and creating. I am currently looking for a job as a Full Stack Developer. I am a fast learner and I am always looking for new challenges and opportunities to grow as a developer.";
+aboutBody.appendChild(aboutBodyText);
 
 // Create the credits and append them to the footer
 const credits = createElement("p","credits",null)
