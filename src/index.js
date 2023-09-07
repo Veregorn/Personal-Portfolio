@@ -1,5 +1,6 @@
 import "./styles/index.css";
 import Me from "./assets/images/charles-deloye-9hFPS9YYaTo-unsplash.jpg";
+import AboutImg from "./assets/images/pexels-marcus-silva-10508561.jpg";
 
 // Create an element with an optional CSS class and optional CSS id
 function createElement(tag, className, id) {
@@ -101,7 +102,7 @@ const spanRole = createElement("span", "main-text-role");
 spanRole.textContent = "Full Stack Developer";
 mainText.appendChild(spanRole);
 
-const MeImage = createElement("img");
+const MeImage = createElement("img", "home-image");
 MeImage.src = Me;
 MeImage.alt = "Me";
 home.appendChild(MeImage);
@@ -122,12 +123,26 @@ const aboutHeaderLine = createElement("div", "section-header-line", "about-heade
 aboutHeader.appendChild(aboutHeaderLine);
 
 const aboutBodyImage = createElement("img", "section-body-image", "about-body-image");
-aboutBodyImage.src = Me;
+aboutBodyImage.src = AboutImg;
 aboutBodyImage.alt = "Me";
 aboutBody.appendChild(aboutBodyImage);
-const aboutBodyText = createElement("p", "section-body-text", "about-body-text");
-aboutBodyText.textContent = "I am a Full Stack Developer with a passion for learning and creating. I am currently looking for a job as a Full Stack Developer. I am a fast learner and I am always looking for new challenges and opportunities to grow as a developer.";
-aboutBody.appendChild(aboutBodyText);
+const aboutBodyDivText = createElement("div", "section-body-div-text", "about-body-div-text");
+aboutBody.appendChild(aboutBodyDivText);
+const aboutBodyText1 = createElement("p", "section-body-text", "about-body-text-1");
+aboutBodyText1.textContent = "Hey there! I'm Raúl, and I want to share a bit of my story with you.";
+aboutBodyDivText.appendChild(aboutBodyText1);
+const aboutBodyText2 = createElement("p", "section-body-text", "about-body-text-2");
+aboutBodyText2.textContent = "About 20 years ago, I graduated in Computer Science. After leaving university, I spent some time working in tech companies, but soon enough, I jumped into the family business to help it grow. For 15 years, I worked side by side with my father and brother, tackling the challenges that come with managing your own company and leading a team.";
+aboutBodyDivText.appendChild(aboutBodyText2);
+const aboutBodyText3 = createElement("p", "section-body-text", "about-body-text-3");
+aboutBodyText3.textContent = "With my father retired and the business well-established, my brother and I made the decision to sell it and take on new challenges. In my case, something deep down always wanted to return to the world of IT, so I decided to go all-in and get back up to speed.";
+aboutBodyDivText.appendChild(aboutBodyText3);
+const aboutBodyText4 = createElement("p", "section-body-text", "about-body-text-4");
+aboutBodyText4.textContent = "Since then, I've been diving into the latest technologies and methodologies, taking on projects and making the most of them. I've always been known for my adaptability, problem-solving skills, and my ability to work effectively within a team. I'm not afraid to embrace new challenges and I have a strong passion for staying up-to-date with the ever-evolving tech landscape.";
+aboutBodyDivText.appendChild(aboutBodyText4);
+const aboutBodyText5 = createElement("p", "section-body-text", "about-body-text-5");
+aboutBodyText5.textContent = "I thrive on learning and applying the most successful practices of the moment, all while tackling projects head-on. It's been quite a journey, and I'm excited to bring my wealth of experience, combined with my dedication to innovation, to your team. Let's create some amazing tech together!";
+aboutBodyDivText.appendChild(aboutBodyText5);
 
 // Create the credits and append them to the footer
 const credits = createElement("p","credits",null)
