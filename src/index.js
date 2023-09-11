@@ -1,6 +1,7 @@
 import "./styles/index.css";
 import Me from "./assets/images/man-white.jpg";
 import AboutImg from "./assets/images/handsome-man-with-blue-glasses-presenting-something.jpg";
+import Project1 from "./assets/images/project1.png";
 
 // Create an element with an optional CSS class and optional CSS id
 function createElement(tag, className, id) {
@@ -155,7 +156,7 @@ stackHeader.appendChild(stackHeaderLine);
 const stackHeaderText = createElement("h2", "section-header-text", "stack-header-text");
 stackHeaderText.textContent = "03. ";
 const stackHeaderTitle = createElement("span", "section-header-title", "stack-header-title");
-stackHeaderTitle.textContent = "Stack";
+stackHeaderTitle.textContent = "My Skills";
 stackHeaderText.appendChild(stackHeaderTitle);
 stackHeader.appendChild(stackHeaderText);
 
@@ -420,6 +421,113 @@ stackTableBodyCell47.textContent = "";
 stackTableBodyRow10.appendChild(stackTableBodyCell47);
 
 // Projects
+const projectsHeader = createElement("div", "section-header", "projects-header");
+const projectsBody = createElement("div", "section-body", "projects-body");
+projects.appendChild(projectsHeader);
+projects.appendChild(projectsBody);
+
+const projectsHeaderLine = createElement("div", "section-header-line", "projects-header-line");
+projectsHeader.appendChild(projectsHeaderLine);
+const projectsHeaderText = createElement("h2", "section-header-text", "projects-header-text");
+projectsHeaderText.textContent = "04. ";
+const projectsHeaderTitle = createElement("span", "section-header-title", "projects-header-title");
+projectsHeaderTitle.textContent = "Things I've Built";
+projectsHeaderText.appendChild(projectsHeaderTitle);
+projectsHeader.appendChild(projectsHeaderText);
+
+const projectsBodyDiv = createElement("div", "section-body-div", "projects-body-div");
+projectsBody.appendChild(projectsBodyDiv);
+
+const projectDiv = createElement("div", "project-div");
+projectsBodyDiv.appendChild(projectDiv);
+const projectDivTop = createElement("div", "project-div-top");
+projectDiv.appendChild(projectDivTop);
+const projectDivTopLeft = createElement("div", "project-div-top-left");
+projectDivTop.appendChild(projectDivTopLeft);
+const projectTitle1 = createElement("h3", "project-title");
+projectTitle1.textContent = "Project 1";
+projectDivTopLeft.appendChild(projectTitle1);
+const projectSubtitle1 = createElement("h4", "project-subtitle");
+projectSubtitle1.textContent = "Project 1 subtitle";
+projectDivTopLeft.appendChild(projectSubtitle1);
+const projectDivTopRight = createElement("div", "project-div-top-right");
+projectDivTop.appendChild(projectDivTopRight);
+const projectDescription1 = createElement("p", "project-description");
+projectDescription1.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl";
+projectDivTopRight.appendChild(projectDescription1);
+const projectLinkButton1 = createElement("a", "project-link-button");
+projectLinkButton1.href = "#";
+projectLinkButton1.target = "_blank";
+projectLinkButton1.rel = "noopener noreferrer";
+projectLinkButton1.textContent = "View Live";
+projectDivTopRight.appendChild(projectLinkButton1);
+const projectDivBottom = createElement("div", "project-div-bottom");
+projectDiv.appendChild(projectDivBottom);
+const projectImage = createElement("img", "project-image");
+projectImage.src = Project1;
+projectImage.alt = "Project 1";
+projectDivBottom.appendChild(projectImage);
+
+// Contact
+const contactHeader = createElement("div", "section-header", "contact-header");
+const contactBody = createElement("div", "section-body", "contact-body");
+contact.appendChild(contactHeader);
+contact.appendChild(contactBody);
+
+const contactHeaderLine = createElement("div", "section-header-line", "contact-header-line");
+contactHeader.appendChild(contactHeaderLine);
+const contactHeaderText = createElement("h2", "section-header-text", "contact-header-text");
+contactHeaderText.textContent = "05. ";
+const contactHeaderTitle = createElement("span", "section-header-title", "contact-header-title");
+contactHeaderTitle.textContent = "Get In Touch";
+contactHeaderText.appendChild(contactHeaderTitle);
+contactHeader.appendChild(contactHeaderText);
+
+const contactBodyDiv = createElement("div", "section-body-div", "contact-body-div");
+contactBody.appendChild(contactBodyDiv);
+const contactBodyDivText = createElement("div", "contact-body-div-text");
+contactBodyDiv.appendChild(contactBodyDivText);
+const contactBodyText1 = createElement("p", "contact-body-text");
+contactBodyText1.textContent = "I'm currently looking for new opportunities, both freelance and full-time. If you'd like to get in touch, you can contact me via the form below.";
+contactBodyDivText.appendChild(contactBodyText1);
+const contactBodyText2 = createElement("p", "contact-body-text");
+contactBodyText2.textContent = "I'll get back to you as soon as possible!";
+contactBodyDivText.appendChild(contactBodyText2);
+const contactBodyForm = createElement("form", "contact-body-form");
+contactBodyDiv.appendChild(contactBodyForm);
+const contactBodyFormDiv = createElement("div", "contact-body-form-div");
+contactBodyForm.appendChild(contactBodyFormDiv);
+const contactBodyFormLabel1 = createElement("label", "contact-body-form-label");
+contactBodyFormLabel1.for = "name";
+contactBodyFormLabel1.textContent = "Name";
+contactBodyFormDiv.appendChild(contactBodyFormLabel1);
+const contactBodyFormInput1 = createElement("input", "contact-body-form-input");
+contactBodyFormInput1.type = "text";
+contactBodyFormInput1.id = "name";
+contactBodyFormInput1.name = "name";
+contactBodyFormDiv.appendChild(contactBodyFormInput1);
+const contactBodyFormLabel2 = createElement("label", "contact-body-form-label");
+contactBodyFormLabel2.for = "email";
+contactBodyFormLabel2.textContent = "Email";
+contactBodyFormDiv.appendChild(contactBodyFormLabel2);
+const contactBodyFormInput2 = createElement("input", "contact-body-form-input");
+contactBodyFormInput2.type = "email";
+contactBodyFormInput2.id = "email";
+contactBodyFormInput2.name = "email";
+contactBodyFormDiv.appendChild(contactBodyFormInput2);
+const contactBodyFormLabel3 = createElement("label", "contact-body-form-label");
+contactBodyFormLabel3.for = "message";
+contactBodyFormLabel3.textContent = "Message";
+contactBodyFormDiv.appendChild(contactBodyFormLabel3);
+const contactBodyFormTextarea = createElement("textarea", "contact-body-form-textarea");
+contactBodyFormTextarea.id = "message";
+contactBodyFormTextarea.name = "message";
+contactBodyFormTextarea.rows = "5";
+contactBodyFormDiv.appendChild(contactBodyFormTextarea);
+const contactBodyFormButton = createElement("button", "contact-body-form-button");
+contactBodyFormButton.type = "submit";
+contactBodyFormButton.textContent = "Send Message";
+contactBodyFormDiv.appendChild(contactBodyFormButton);
 
 // Create the credits and append them to the footer
 const credits = createElement("p","credits",null)
