@@ -1,0 +1,28 @@
+{
+    "projects":[
+        {
+            "title": "Proyecto A",
+            "subtitle": "Subtítulo del Proyecto A",
+            "description": "Esta es la descripción detallada del Proyecto A.",
+            "link": "https://linkalproyectoA.com",
+            "image": "project1.png",
+            "alt": "Imagen descriptiva del Proyecto A"
+        },
+        {
+            "title": "Proyecto B",
+            "subtitle": "Subtítulo del Proyecto B",
+            "description": "Esta es la descripción detallada del Proyecto B.",
+            "link": "https://linkalproyectoB.com",
+            "image": "project2.png",
+            "alt": "Imagen descriptiva del Proyecto B"
+        },
+        {
+            "title": "Proyecto C",
+            "subtitle": "Subtítulo del Proyecto C",
+            "description": "Esta es la descripción detallada del Proyecto C.",
+            "link": "https://linkalproyectoC.com",
+            "image": "project3.png",
+            "alt": "Imagen descriptiva del Proyecto C"
+        }
+    ]
+}

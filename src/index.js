@@ -1,12 +1,18 @@
 import "./styles/index.css";
 import Me from "./assets/images/man-white.jpg";
 import AboutImg from "./assets/images/handsome-man-with-blue-glasses-presenting-something.jpg";
-import Project1 from "./assets/images/project1.png";
 import LinkedIn from "./assets/images/linkedin-icon.svg";
 import Instagram from "./assets/images/instagram-icon.svg";
 import GitHub from "./assets/images/github-icon.svg";
 import X from "./assets/images/x-icon.svg";
 import Mail from "./assets/images/mail-icon.svg";
+import projectsData from "./assets/data/projects.json";
+
+// Function that imports an image based on an input name
+async function loadImage(imageName) {
+    const imageModule = await import(`./assets/images/${imageName}`);
+    return imageModule.default;
+}
 
 // Create an element with an optional CSS class and optional CSS id
 function createElement(tag, className, id) {
@@ -24,6 +30,15 @@ function createElement(tag, className, id) {
     return element
 
 }
+
+// Retrieve an element from the DOM
+/* function getElement(id) {
+        
+    const element = document.getElementById(id)
+
+    return element
+
+} */
 
 // Create 3 main sections
 const header = createElement("header");
@@ -109,6 +124,7 @@ spanRole.textContent = "Full Stack Developer";
 mainText.appendChild(spanRole);
 
 const MeImage = createElement("img", "home-image");
+MeImage.classList.add("home-image");
 MeImage.src = Me;
 MeImage.alt = "Me";
 home.appendChild(MeImage);
@@ -425,7 +441,7 @@ const stackTableBodyCell47 = createElement("td", "section-body-table-body-cell-e
 stackTableBodyCell47.textContent = "";
 stackTableBodyRow10.appendChild(stackTableBodyCell47);
 
-// Projects
+// Projects main container
 const projectsHeader = createElement("div", "section-header", "projects-header");
 const projectsBody = createElement("div", "section-body", "projects-body");
 projects.appendChild(projectsHeader);
@@ -443,35 +459,46 @@ projectsHeader.appendChild(projectsHeaderText);
 const projectsBodyDiv = createElement("div", "section-body-div", "projects-body-div");
 projectsBody.appendChild(projectsBodyDiv);
 
-const projectDiv = createElement("div", "project-div");
-projectsBodyDiv.appendChild(projectDiv);
-const projectDivTop = createElement("div", "project-div-top");
-projectDiv.appendChild(projectDivTop);
-const projectDivTopLeft = createElement("div", "project-div-top-left");
-projectDivTop.appendChild(projectDivTopLeft);
-const projectTitle1 = createElement("h3", "project-title");
-projectTitle1.textContent = "Project 1";
-projectDivTopLeft.appendChild(projectTitle1);
-const projectSubtitle1 = createElement("h4", "project-subtitle");
-projectSubtitle1.textContent = "Project 1 subtitle";
-projectDivTopLeft.appendChild(projectSubtitle1);
-const projectDivTopRight = createElement("div", "project-div-top-right");
-projectDivTop.appendChild(projectDivTopRight);
-const projectDescription1 = createElement("p", "project-description");
-projectDescription1.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl";
-projectDivTopRight.appendChild(projectDescription1);
-const projectLinkButton1 = createElement("a", "project-link-button");
-projectLinkButton1.href = "#";
-projectLinkButton1.target = "_blank";
-projectLinkButton1.rel = "noopener noreferrer";
-projectLinkButton1.textContent = "View Live";
-projectDivTopRight.appendChild(projectLinkButton1);
-const projectDivBottom = createElement("div", "project-div-bottom");
-projectDiv.appendChild(projectDivBottom);
-const projectImage = createElement("img", "project-image");
-projectImage.src = Project1;
-projectImage.alt = "Project 1";
-projectDivBottom.appendChild(projectImage);
+// Function that receives data from the JSON file and creates the projects
+function createProject(project) {
+    const projectDiv = createElement("div", "project-div");
+    projectsBodyDiv.appendChild(projectDiv);
+    const projectDivTop = createElement("div", "project-div-top");
+    projectDiv.appendChild(projectDivTop);
+    const projectDivTopLeft = createElement("div", "project-div-top-left");
+    projectDivTop.appendChild(projectDivTopLeft);
+    const projectTitle = createElement("h3", "project-title");
+    projectTitle.textContent = project.title;
+    projectDivTopLeft.appendChild(projectTitle);
+    const projectSubtitle = createElement("h4", "project-subtitle");
+    projectSubtitle.textContent = project.subtitle;
+    projectDivTopLeft.appendChild(projectSubtitle);
+    const projectDivTopRight = createElement("div", "project-div-top-right");
+    projectDivTop.appendChild(projectDivTopRight);
+    const projectDescription = createElement("p", "project-description");
+    projectDescription.textContent = project.description;
+    projectDivTopRight.appendChild(projectDescription);
+    const projectLinkButton = createElement("a", "project-link-button");
+    projectLinkButton.href = project.link;
+    projectLinkButton.target = "_blank";
+    projectLinkButton.rel = "noopener noreferrer";
+    projectLinkButton.textContent = "View Live";
+    projectDivTopRight.appendChild(projectLinkButton);
+    const projectDivBottom = createElement("div", "project-div-bottom");
+    projectDiv.appendChild(projectDivBottom);
+    
+    // Dinamically loading the images
+    loadImage(project.image).then(src => {
+        const projectImage = new Image();
+        projectImage.src = src;
+        projectImage.alt = project.alt;
+        projectImage.classList.add("project-image");
+        projectDivBottom.appendChild(projectImage);
+    });
+}
+
+// Fetching the data from the JSON file
+projectsData.projects.forEach(createProject);
 
 // Contact
 const contactHeader = createElement("div", "section-header", "contact-header");
