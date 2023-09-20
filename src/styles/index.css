@@ -54,12 +54,15 @@ table {
     src: url('../assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf');
 }
 
+html {
+    font-size: calc(12px + 0.390625vw); /* 1vw = 1% of viewport width. Only works if placed in html tag */
+}
+
 body {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: calc(12px + 0.390625vw);
     color: #000000;
     min-height: 100vh;
 }
@@ -83,7 +86,7 @@ h4 {
 header,footer {
     display: flex;
     align-items: center;
-    padding: 20px 40px;
+    padding: 2rem 4rem;
     background-color: #000000;
     color: #E6FFF6;
 }
@@ -108,7 +111,8 @@ nav {
 }
 
 .menu-item {
-    margin-left: 5px;
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
     cursor: pointer;
 }
 
@@ -116,7 +120,7 @@ nav {
     content: '';
     width: 0%;
     height: 1px;
-    margin-top: 5px;
+    margin-top: 0.3rem;
     display: block;
     transition: all 0.3s ease;
 }
@@ -124,12 +128,12 @@ nav {
 .menu-item:hover::after {
     width: 100%;
     height: 1px;
-    margin-top: 5px;
+    margin-top: 0.3rem;
     background-color: #E6FFF6;
 }
 
 .menu-item-number {
-    margin-left: 20px;
+    margin-left: 2rem;
     color: #00A97F;
 }
 
@@ -143,7 +147,6 @@ main {
 }
 
 section {
-    /* padding-top: 6rem; */
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -154,9 +157,8 @@ section {
 }
 
 .home {
-    /* padding-top: 6rem; */
     width: 100%;
-    background: url('../assets/images/circuit-primary.svg') no-repeat;
+    background: url('../assets/images/curve-line.svg') no-repeat;
     display: flex;
     flex-direction: row;
     align-items: end;
@@ -171,7 +173,7 @@ section {
     color: #01876C;
     line-height: 4rem;
     text-align: end;
-    margin-bottom: 30%;
+    margin-bottom: 10%;
 }
 
 .main-text-name {
@@ -184,7 +186,7 @@ section {
 }
 
 .home-image {
-    width: 600px;
+    max-width: 600px;
     height: auto;
 }
 
@@ -206,7 +208,6 @@ section {
 .section-header-line {
     width: 100%;
     height: 1px;
-    /* margin-top: 0.5rem; */
     margin-bottom: 1.5rem;
     background-color: #00A97F;
 }
@@ -215,14 +216,18 @@ section {
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: top;
+    align-items:end;
     justify-content: center;
     gap: 5%;
 }
 
 #about-body-image {
-    width: 500px;
+    max-width: 500px;
     height: auto;
+}
+
+#about-body-div-text {
+    padding-bottom: 4rem;
 }
 
 .section-body-text {
@@ -251,32 +256,34 @@ th {
 
 .section-body-table-body-cell-filled {
     position: relative;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .section-body-table-body-cell-empty {
     position: relative;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .section-body-table-body-cell-filled::after {
     content: '';
     position: absolute;
-    top: 15px;
-    left: 5px;
-    right: 5px;
-    bottom: 15px;
+    top: 0.7rem;
+    left: 0.2rem;
+    right: 0.2rem;
+    bottom: 0.7rem;
     background-color: #00A97F;
+    border: 1px solid #00A97F;
 }
 
 .section-body-table-body-cell-empty::after {
     content: '';
     position: absolute;
-    top: 15px;
-    left: 5px;
-    right: 5px;
-    bottom: 15px;
-    background-color: #000000;
+    top: 0.7rem;
+    left: 0.2rem;
+    right: 0.2rem;
+    bottom: 0.7rem;
+    background-color: #fff;
+    border: 1px solid #00A97F;
 }
 
 /* Projects section */
@@ -302,7 +309,7 @@ th {
 
 .project-div {
     margin-bottom: 4rem;
-    width: 800px;
+    max-width: 100%;
 }
 
 .project-div-top {
@@ -355,7 +362,7 @@ th {
 }
 
 .project-image {
-    width: 800px;
+    max-width: 800px;
     height: auto;
     border: 8px solid #000000;
     border-radius: 20px;
@@ -379,7 +386,7 @@ th {
 }
 
 .contact-body-bottom {
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -392,9 +399,13 @@ th {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: end;
     justify-content: center;
     gap: 1.5rem;
+    background-image: url('../assets/images/circuit-primary.svg');
+    background-size: cover;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: left; /* Centra la imagen en el div */
 }
 
 .contact-body-text {
@@ -453,7 +464,8 @@ th {
 
 .contact-body-form-input:focus {
     outline: none;
-    border: 2px solid #00A97F;
+    border: 1px solid #00A97F;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contact-body-form-textarea {
@@ -469,7 +481,8 @@ th {
 
 .contact-body-form-textarea:focus {
     outline: none;
-    border: 2px solid #00A97F;
+    border: 1px solid #00A97F;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .contact-body-form-button {

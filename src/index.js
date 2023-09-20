@@ -1,5 +1,5 @@
 import "./styles/index.css";
-import Me from "./assets/images/man-white.jpg";
+import Me from "./assets/images/man-white.png";
 import AboutImg from "./assets/images/handsome-man-with-blue-glasses-presenting-something.jpg";
 import LinkedIn from "./assets/images/linkedin-icon.svg";
 import Instagram from "./assets/images/instagram-icon.svg";
