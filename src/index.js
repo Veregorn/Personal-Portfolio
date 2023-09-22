@@ -88,9 +88,27 @@ menuItems.forEach((item) => {
 
 nav.appendChild(menu);
 
+// Add a div for small screen devices (burger menu)
+const smallScreenMenu = createElement("div", "small-screen-menu");
+const smallScreenMenuLine1 = createElement("div", "small-screen-menu-line", "small-screen-menu-line-1");
+const smallScreenMenuLine2 = createElement("div", "small-screen-menu-line", "small-screen-menu-line-2");
+const smallScreenMenuLine3 = createElement("div", "small-screen-menu-line", "small-screen-menu-line-3");
+smallScreenMenu.appendChild(smallScreenMenuLine1);
+smallScreenMenu.appendChild(smallScreenMenuLine2);
+smallScreenMenu.appendChild(smallScreenMenuLine3);
+nav.appendChild(smallScreenMenu);
+
 // Add each subsection to the header
 header.appendChild(logo);
 header.appendChild(nav);
+
+// Add an event listener to the small screen menu
+smallScreenMenu.addEventListener("click", () => {
+    menu.classList.toggle("menu-active");
+    smallScreenMenuLine1.classList.toggle("small-screen-menu-line-1-active");
+    smallScreenMenuLine2.classList.toggle("small-screen-menu-line-2-active");
+    smallScreenMenuLine3.classList.toggle("small-screen-menu-line-3-active");
+});
 
 // Add content to main section
 // First create 5 big subsections

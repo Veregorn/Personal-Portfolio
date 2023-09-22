@@ -93,7 +93,6 @@ header,footer {
 
 header {
     justify-content: space-between;
-    font-size: 2;
 }
 
 .logo {
@@ -108,6 +107,7 @@ nav {
 .menu {
     display: flex;
     align-items: center;
+    transition: right 0.5s ease;
 }
 
 .menu-item {
@@ -137,6 +137,75 @@ nav {
     color: #00A97F;
 }
 
+.small-screen-menu {
+    display: none;
+    padding-left: 1rem;
+}
+
+.small-screen-menu-line {
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    background-color: #E6FFF6;
+    border-radius: 5px;
+    transition: transform 0.5s, width 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+    
+    nav {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: end;
+        padding: 20px;
+        position: absolute;
+        background-color: #000000;
+        width: 100px;
+        right: -150px;
+        top: 6.8rem;
+    }
+
+    .menu-item {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 1rem 0;
+        text-align: end;
+    }
+
+    .small-screen-menu {
+        display: block;
+        position: absolute;
+        top: 2.7rem;
+        right: 2rem;
+    }
+
+    .small-screen-menu:hover {
+        cursor: pointer;
+    }
+
+    .menu-active {
+        right: 0px;
+    }
+
+    .small-screen-menu-line-1-active {
+        transform: rotate(-45deg) translate(-8px, 6px);
+    }
+
+    .small-screen-menu-line-2-active {
+        width: 0;
+    }
+
+    .small-screen-menu-line-3-active {
+        transform: rotate(45deg) translate(-8px, -6px);
+    }
+
+}
+
+/* Main Content */
+
 main {
     display: flex;
     flex-direction: column;
@@ -148,6 +217,7 @@ main {
 
 section {
     width: 90%;
+    margin: 0 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -165,7 +235,6 @@ section {
     justify-content: end;
     flex-grow: 1;
     gap: 5%;
-    margin-right: 4rem;
     min-height: 100vh;
 }
 
@@ -242,7 +311,7 @@ section {
 /* Stack section */
 
 table {
-    width: 100%;
+    max-width: 100%;
     margin-bottom: 4rem;
 }
 
@@ -289,7 +358,7 @@ th {
 /* Projects section */
 
 #projects-body {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -299,7 +368,7 @@ th {
 
 
 #projects-body-div {
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
