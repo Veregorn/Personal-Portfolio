@@ -163,12 +163,23 @@ aboutHeaderTitle.textContent = "About Me";
 aboutHeaderText.appendChild(aboutHeaderTitle);
 aboutHeader.appendChild(aboutHeaderText);
 
+// About - Body
+// About - Body - Picture selector
+const aboutBodyPicture = createElement("picture", "section-body-picture", "about-body-picture");
+aboutBody.appendChild(aboutBodyPicture);
+const aboutBodySource1 = createElement("source", "section-body-source", "about-body-source-1");
+aboutBodySource1.srcset = AboutSmallImg;
+aboutBodySource1.media = "(max-width: 876px)";
+aboutBodyPicture.appendChild(aboutBodySource1);
+const aboutBodySource2 = createElement("source", "section-body-source", "about-body-source-2");
+aboutBodySource2.srcset = AboutBigImg;
+aboutBodySource2.media = "(min-width: 877px)";
+aboutBodyPicture.appendChild(aboutBodySource2);
 const aboutBodyImage = createElement("img", "section-body-image", "about-body-image");
 aboutBodyImage.src = AboutBigImg;
-aboutBodyImage.srcset = `${AboutSmallImg} 668w, ${AboutBigImg} 743w`;
-aboutBodyImage.sizes = "(max-width: 876px) 668px, 743px";
 aboutBodyImage.alt = "Me";
-aboutBody.appendChild(aboutBodyImage);
+aboutBodyPicture.appendChild(aboutBodyImage);
+
 const aboutBodyDivText = createElement("div", "section-body-div-text", "about-body-div-text");
 aboutBody.appendChild(aboutBodyDivText);
 const aboutBodyText1 = createElement("p", "section-body-text", "about-body-text-1");
