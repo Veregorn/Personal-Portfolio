@@ -565,6 +565,15 @@ footer {
 
 /* Small screens */
 
+@media screen and (max-width: 1560px) {
+    
+    .contact-body-social {
+        background: none;
+        width: auto;
+    }
+
+}
+
 @media screen and (max-width: 876px) {
     
     nav {
@@ -674,6 +683,25 @@ footer {
 
     .project-image {
         max-width: 350px;
+    }
+
+    .contact-body-bottom {
+        flex-direction: column;
+    }
+    
+    .contact-body-form {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .contact-body-social {
+        flex-direction: row;
+        margin: 2rem 0;
+        padding: 0;
+    }
+
+    .credits {
+        font-size: 0.8rem;
     }
 
 }
